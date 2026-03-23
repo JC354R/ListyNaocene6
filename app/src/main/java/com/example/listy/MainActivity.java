@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextNazwa, editTextCena;
 
 
+    private Button buttonUsun;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +66,16 @@ public class MainActivity extends AppCompatActivity {
                 double cena = Double.parseDouble(editTextCena.getText().toString());
 
                 arrayListProdukty.add(new Produkt(nazwa, cena, false));
+                arrayAdapter.notifyDataSetChanged();
+            }
+        });
+
+
+        buttonUsun = findViewById(R.id.buttonUsun);
+        buttonUsun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                arrayListProdukty.removeIf(Produkt::isCzyKupione);
                 arrayAdapter.notifyDataSetChanged();
             }
         });

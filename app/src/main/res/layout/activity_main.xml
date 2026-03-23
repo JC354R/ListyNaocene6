@@ -40,4 +40,10 @@
         android:layout_height="wrap_content"
         android:text="Dodaj" />
 
+    <Button
+        android:id="@+id/buttonUsun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Usun Kupione" />
+
 </LinearLayout>
